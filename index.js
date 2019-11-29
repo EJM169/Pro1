@@ -1,11 +1,9 @@
 var express             = require("express"),
     app                 = express(),
-    bCrypt              = require('bcrypt'),
     bodyParser          = require("body-parser"),
     flash               = require("connect-flash"),
     mongoose            = require("mongoose"),
     passport            = require("passport"),
-    LocalStrategy       = require("passport-local"),
     methodOverride      = require("method-override")
     doctorUser          = require("./models/Doctor"),
     doctorRoute         = require("./routes/doctor"),
