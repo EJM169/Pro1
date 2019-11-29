@@ -8,6 +8,12 @@ var express             = require("express"),
 router.get("/doctor/signup",function(req,res){
     res.render("./Doctor/Signup");
 });
+
+router.get("/test",function(req,res){
+    res.render("./Doctor/Dash2");
+});
+
+
 router.post("/doctor/signup",passport.authenticate('signup', {
     successRedirect: "/doctor/dashboard",
     failureRedirect:"/doctor/signup",
@@ -32,7 +38,7 @@ router.get("/doctor/dashboard",middleware.isLoggedIn,function(req,res){
             res.redirect("/doctor/login");
         } else {
             console.log("DASHBOARD");
-            res.render("./Doctor/Dashboard",{currentUser:req.user});
+            res.render("./Doctor/Dash2",{currentUser:req.user});
         }
 
     });

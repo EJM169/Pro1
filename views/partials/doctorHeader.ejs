@@ -3,21 +3,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>InstaDoc &mdash; Powered by Truebeat</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styleDoc.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+          background: #F5F6FA;
+        }
+          a:link {
+            color : #fff;
+          }
+      </style>
+
   </head>
   <body>
-
-        <div class="container mt-1 " style="width:550px;">
-                <% if(error && error.length>0){ %>
-                  <div class="alert alert-danger text-center " role="alert">
-                      <%=error%>
-                    </div>
-                <%} %>
-                <% if(success && success.length>0){ %>
-                  <div class="alert alert-success text-center " role="alert">
-                      <%=success%>
-                    </div>
-                <%} %>
-                
-              </div>

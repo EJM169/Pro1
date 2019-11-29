@@ -1,12 +1,13 @@
 <% include ../partials/header.ejs %>
 
-
-<div class = "jumbotron-fluid wait-r">
+<div class="container" style="padding:10%">
+    <div class="jumbotron">
+        <div class = "jumbotron-fluid wait-r">
     <div class="container ">
-        <div class="border border-dark rounded ">
-            <div class="text-left text-white d-block p-1 border-bottom" style="background-color: #1A58D233 !important;" >
+        <div class="border border-dark rounded " style="background:rgb(235, 235, 235)">
+            <div class="text-left d-block p-1 border-bottom">
                     <h4>Hello <span id="Username"><%= username %></span></h4>
-                    <h5>Mobile:<span id="mob"><%=mobile%></span></h5>
+                    <h5>Mobile : <span id="mob"><%=mobile%></span></h5>
                     <h3>You have visited <span id="roomname"><%=doctordetail.userid%></span></h3>
                 <h3>Doctor Name: Dr.<span  id="doctorName"><%=doctordetail.username %></span></h3>
             </div>
@@ -22,7 +23,7 @@
     <br>
     <div class="messageArea">
             <h4>Global Waiting Room Chat</h4>
-            <div id="chat" class="chat" style="overflow: auto;resize: vertical;height: 170px;background-color: #8e37901a;border-radius: 3px 3px 0px 0px;color: #1a3349;"></div>
+            <div id="chat" class="chat" style="overflow: auto;resize: vertical;height: 170px; background: -webkit-linear-gradient(to right, #ffc0cb, #800080);background: linear-gradient(to right, #ffc0cb, #800080);border-radius: 3px 3px 0px 0px;color: #1a3349;"></div>
             <form id="messageForm" action="">
               <div class="form-group">
                
@@ -31,6 +32,8 @@
                 <input type="submit" class="btn btn-primary" value="send message" />
               </div>
             </form>
+          </div>
+          </div>
           </div>
           
          

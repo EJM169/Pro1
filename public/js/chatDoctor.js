@@ -20,7 +20,7 @@ $(function(){
                
             console.log("username");
             for(i=0; i<username.length; i++){
-              html += '<li class="list-group-item"> Name:'+username[i]+'</li>' 
+              html += '<li><a>'+username[i]+'</a></li>' 
               
             }
             $users.html(html);

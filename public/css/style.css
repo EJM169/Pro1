@@ -82,7 +82,7 @@ background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3
 
 }
   .dashboard{
-      padding: 20% 10%;
+      padding: 10% 10%;
       background: #74ebd5;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -92,7 +92,7 @@ background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, F
   /*login form */
 
   
-  .modal-login {
+.modal-login {
     color: #636363;
     width: 350px;
 }
@@ -246,18 +246,6 @@ background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, F
 
   
 /* Waiting room */
- .wait-r{
-  height: 100%;
-  background:none;
-  padding: 20% 15% 45%;
-  background: #1c92d2;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
- }
-
-
-
 
  /* sidebar css or doctor css */
  body {
@@ -561,7 +549,7 @@ display: block;
 /* User Login form styling */
 
 #userLogin{
-  padding: 20% 10%;
+  padding: 10% 10%;
   background: #3A1C71;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to top, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
