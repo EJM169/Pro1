@@ -1,6 +1,5 @@
- 
- var middlewareObject ={};
-
+  var middlewareObject ={};
+//The middleware used to check if the user is logged in before accessing the page
  middlewareObject.isLoggedIn=function(req,res,next){
     if(req.isAuthenticated()){
         return next();
@@ -23,4 +22,4 @@ middlewareObject.isUserLogged=function(req,res,next){
 
 
 
- module.exports=middlewareObject;
+ module.exports=middlewareObject; //Exporting it back to the main file
