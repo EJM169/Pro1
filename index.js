@@ -16,14 +16,20 @@ var express             = require("express"),
     
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
+
+//Setting up the routes to access the public and route file
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/routes'));
+
+//Setting up express session
 app.use(methodOverride("_method"));
 app.use(require("express-session")({
     secret:"This is a secret so Shush",
     resave:false,
     saveUninitialized:false
 }));
+
+//Intialising and using passport
 app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(doctorUser.serializeUser());
@@ -35,13 +41,15 @@ app.use(function(req,res,next){
     res.locals.success      = req.flash("success");
     next();
 });
-app.use(indexAuthRoute);
 
+//Calling the various routes in in route file and execting them
+app.use(indexAuthRoute);
 app.use(doctorRoute);
 app.use(userRoute);
 
 server=app.listen(PORT);
 
+//Code to run chat using socket.io
 const io = require("socket.io")(server);
 var usercount       =[],
     // userDetail      =[{roomname[{
