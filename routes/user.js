@@ -6,6 +6,7 @@ var express             = require("express"),
 
 // get(id-->findbyid(middleware)-->loginpage)
 // post(:id-->/id (doctor,user,mobile)) 
+//The user trying to access a doctors lobby
 router.get("/:id",isDoctorCheck,function(req,res){
     
    res.render("./User/Login",{doctorDetail:req.session.doctor});
@@ -29,7 +30,7 @@ router.post("/:id",function(req,res){
     });
 
 });
-
+//Middleware to check whether the doctor is online
 function isDoctorCheck(req,res,next){
     doctorUser.findOne({userid:req.params.id},function(err,doctor){
         if(err){
@@ -49,4 +50,4 @@ function isDoctorCheck(req,res,next){
         }
     });
 }
-module.exports = router;
+module.exports = router;    //Exporting it to be used elsewhere
