@@ -110,14 +110,12 @@ var createHash = function(password){
 
 
 
-
+//The index or the default path
 router.get("/",function(req,res){
     res.render("index");
 });
 
-
-
-
+//The logout path logic
 router.get("/doctor/logout",function(req,res){
     req.logout();
     req.flash('success','Bye..');
@@ -125,4 +123,4 @@ router.get("/doctor/logout",function(req,res){
     res.redirect("/");
 });
 
-module.exports = router;
+module.exports = router;    //Exporting the index route to be used elsewhere
