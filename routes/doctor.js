@@ -5,23 +5,22 @@ var express             = require("express"),
     passport            = require("passport")
     middleware          = require("../middleware");
 
+//The signup route for a new doctor
 router.get("/doctor/signup",function(req,res){
     res.render("./Doctor/Signup");
 });
 
-router.get("/test",function(req,res){
+/*router.get("/test",function(req,res){
     res.render("./Doctor/Dash2");
-});
-
-
+});*/
 router.post("/doctor/signup",passport.authenticate('signup', {
     successRedirect: "/doctor/dashboard",
     failureRedirect:"/doctor/signup",
     failureFlash : true 
   }));
   
-  
-  router.get("/doctor/login",function(req,res){
+//The login route for doctor 
+router.get("/doctor/login",function(req,res){
     res.render("./Doctor/Login",{username:null});
 });
 router.post("/doctor/login",passport.authenticate("login", 
@@ -30,6 +29,8 @@ router.post("/doctor/login",passport.authenticate("login",
     failureFlash: true}),
      function(req,res){
 });
+
+//The doctor dashboard route
 router.get("/doctor/dashboard",middleware.isLoggedIn,function(req,res){
     doctorUser.findById(req.params.id,function(err,doctor){
         if(err){
@@ -43,6 +44,8 @@ router.get("/doctor/dashboard",middleware.isLoggedIn,function(req,res){
 
     });
 });
+
+//The doctor profile route
 router.get("/doctor/:id/profile",middleware.isLoggedIn,function(req,res){
     doctorUser.findById(req.params.id,function(err,doctor){
         if(err){
