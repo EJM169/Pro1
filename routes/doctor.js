@@ -59,7 +59,7 @@ router.get("/doctor/:id/profile",middleware.isLoggedIn,function(req,res){
 
     });
 })
-
+//The doctor profile edit route 
 router.get("/doctor/:id/edit",middleware.isLoggedIn,function(req,res){
     doctorUser.findById(req.params.id,function(err,doctor){
         if(err){
@@ -73,7 +73,7 @@ router.get("/doctor/:id/edit",middleware.isLoggedIn,function(req,res){
         }
     })
 });
-
+//The doctor profile update route used to update the doctor profile after updation
 router.put("/doctor/:id/profile", middleware.isLoggedIn,function(req,res){
   
         doctorUser.findByIdAndUpdate(req.params.id,req.body.newDoctor,function(err,updatedDoctor){
@@ -90,7 +90,7 @@ router.put("/doctor/:id/profile", middleware.isLoggedIn,function(req,res){
         
     
 });
-
+//The doctor profile delete route used to create account
 router.delete("/doctor/:id",middleware.isLoggedIn,function(req,res){
     doctorUser.findByIdAndDelete(req.params.id,function(err){
         if(err){
@@ -104,6 +104,7 @@ router.delete("/doctor/:id",middleware.isLoggedIn,function(req,res){
     })
 });
 
+//The doctor logout route used by the doctor to logout
 router.get("/doctor/logout",function(req,res){
     req.logout();
     req.flash('success','Bye..');
