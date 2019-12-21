@@ -21,8 +21,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/routes'));
 
+app.use(methodOverride("_method"));     // Used for using put, delete with post
+
 //Setting up express session
-app.use(methodOverride("_method"));
 app.use(require("express-session")({
     secret:"This is a secret so Shush",
     resave:false,
@@ -42,12 +43,12 @@ app.use(function(req,res,next){
     next();
 });
 
-//Calling the various routes in in route file and execting them
+//Calling and using the various routes in the route file 
 app.use(indexAuthRoute);
 app.use(doctorRoute);
 app.use(userRoute);
 
-server=app.listen(PORT);
+server=app.listen(PORT);    //Running the app in the port number
 
 //Code to run chat using socket.io
 const io = require("socket.io")(server);
@@ -68,7 +69,7 @@ var usercount       =[],
     // -----------
 var actiList = [];
 var actiRoom;
-   
+   //Activating socket when a connection is made
     io.sockets.on("connection",function(socket){
         // socket.on("join", function(roomid,username,mobile){
         //     socket.join(roomid);
@@ -85,6 +86,8 @@ var actiRoom;
         // });
         connections.push(socket);
         console.log('connected: %s sockets connected', connections.length);
+        
+        //Wen a new customer logs in socket connection works
         socket.on('new userLogged', function(room,user,mobile){
             // console.log(room);
             console.log("user connected");
@@ -109,6 +112,7 @@ var actiRoom;
 
           });
 
+        //When a new or existing doctor logs in this socket works
           socket.on('new doctorLogged',function(data){   
             console.log("Doctor connected");
               socket.doctorName = data;
@@ -119,7 +123,8 @@ var actiRoom;
 
            
           });
-
+        
+        //When a user disconnects
           socket.on('disconnect',function(data){
               console.log(data);
                 roomname.splice(roomname.indexOf(socket.roomname), 1);
